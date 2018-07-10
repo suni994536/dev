@@ -1,0 +1,17 @@
+  my $content;
+    open(my $fh, '<', $filename) or die "cannot open file $filename";
+    {
+        local $/;
+        $content = <$fh>;
+    }
+    close($fh);
+
+
+....................................
+
+
+open INPUT, "input.txt";
+undef $/;
+$content = <INPUT>;
+close INPUT;
+$/ = "\n";
